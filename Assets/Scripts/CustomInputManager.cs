@@ -40,4 +40,9 @@ public class CustomInputManager : MonoBehaviour
     {
         return inputMap.FindAction("Jump").triggered;
     }
+
+    public bool FlipCameraInput()
+    {
+        return inputMap.FindAction("FlipCamera").triggered;
+    }
 }
