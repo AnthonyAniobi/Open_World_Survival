@@ -19,6 +19,7 @@ public class CustomInputManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void Start()
     {
         inputMap = InputSystem.actions.FindActionMap("Player");
