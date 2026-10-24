@@ -21,7 +21,7 @@ public class CustomInputManager : MonoBehaviour
     }
     void Start()
     {
-        inputMap = new InputActionMap("Player");
+        inputMap = InputSystem.actions.FindActionMap("Player");
         inputMap.Enable();
     }
 
