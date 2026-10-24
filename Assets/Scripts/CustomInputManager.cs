@@ -38,12 +38,12 @@ public class CustomInputManager : MonoBehaviour
 
     public bool GetJumpInput()
     {
-        return inputMap.FindAction("Jump").triggered;
+        return inputMap.FindAction("Jump").WasPressedThisFrame();
     }
 
     public bool FlipCameraInput()
     {
-        return inputMap.FindAction("FlipCamera").triggered;
+        return inputMap.FindAction("FlipCamera").WasPressedThisFrame();
     }
 
     public void HideCursor()
