@@ -1,16 +1,42 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CustomInputManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static CustomInputManager Instance { get; private set; }
+
+    private InputActionMap inputMap;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
-        
+        inputMap = new InputActionMap("Player");
+        inputMap.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
+    public Vector2 GetLookInput()
     {
-        
+        return inputMap.FindAction("Look").ReadValue<Vector2>();
+    }
+
+    public Vector2 GetMoveInput()
+    {
+        return inputMap.FindAction("Move").ReadValue<Vector2>();
+    }
+
+    public bool GetJumpInput()
+    {
+        return inputMap.FindAction("Jump").triggered;
     }
 }
