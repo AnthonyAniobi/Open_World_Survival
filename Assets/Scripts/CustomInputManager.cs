@@ -45,4 +45,16 @@ public class CustomInputManager : MonoBehaviour
     {
         return inputMap.FindAction("FlipCamera").triggered;
     }
+
+    public void HideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }
