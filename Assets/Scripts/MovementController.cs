@@ -17,7 +17,8 @@ public class MovementController : MonoBehaviour
     {
         Vector2 moveInput = CustomInputManager.Instance.GetMoveInput();
         bool jumpInput = CustomInputManager.Instance.GetJumpInput();
-        Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
+        Quaternion yawRotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+        Vector3 moveDirection = yawRotation * new Vector3(moveInput.x, 0f, moveInput.y);
         if (jumpInput && characterController.isGrounded)
         {
             verticalVelocity = Mathf.Sqrt(2f * jumpHeight * Mathf.Abs(gravity)); // Adjust jump height as needed
