@@ -1,16 +1,43 @@
+using TMPro;
 using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public static SelectionManager Instance {get; private set;}
+
+    [SerializeField] private TextMeshProUGUI selectionText;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    
     void Update()
     {
-        
+        CheckSelectedObject();
+    }
+
+    private void CheckSelectedObject()
+    {
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo))
+        {
+            InteractableObject interactableObject;
+            if(hitInfo.collider.TryGetComponent<InteractableObject>(out interactableObject))
+            {
+                selectionText.text = interactableObject.GetName();
+            }
+            else
+            {
+                selectionText.text = "";
+            }
+        }
     }
 }
