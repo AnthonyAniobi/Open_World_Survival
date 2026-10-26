@@ -531,7 +531,7 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "40eb4182-84e1-43a9-87ee-ab3300f669d6",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Hold",
                     "initialStateCheck": false
@@ -585,15 +585,6 @@
                     "name": "FlipCamera",
                     "type": "Button",
                     "id": "6b6101f0-8565-4864-a748-781a239dc146",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Interact1",
-                    "type": "Button",
-                    "id": "ab3ae11b-5ad7-4664-8eb0-e78d5d63fc57",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -994,17 +985,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "FlipCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b23faf99-9ffe-406a-bc3d-b3c2b8e0522b",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Interact1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
