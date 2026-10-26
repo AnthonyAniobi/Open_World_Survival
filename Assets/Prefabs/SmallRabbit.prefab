@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 822174544859209485}
   - component: {fileID: 6467853865815595983}
   - component: {fileID: 1626410642713992022}
+  - component: {fileID: 4305687555120659189}
   m_Layer: 0
   m_Name: SmallRabbit
   m_TagString: Untagged
@@ -606,7 +607,7 @@ Animator:
   m_GameObject: {fileID: 3366482551475874857}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8beaedaf7a4023642b48737ef7ee04b7, type: 2}
+  m_Controller: {fileID: 9100000, guid: f12f1e40c55114dc4ae1d34eec060eb7, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -679,6 +680,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4305687555120659189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366482551475874857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b8c1b67f81e4a04aafe75e18bbfa5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AIMovement
+  moveSpeed: 3
+  minMoveTime: 2
+  maxMoveTime: 3
+  minIdleTime: 1
+  maxIdleTime: 2
 --- !u!1 &4096859672154560589
 GameObject:
   m_ObjectHideFlags: 0

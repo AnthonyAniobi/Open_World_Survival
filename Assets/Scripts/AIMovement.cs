@@ -47,31 +47,27 @@ public class AIMovement : MonoBehaviour
         {
             case 0: // forward
                 lookRotation = Quaternion.Euler(0f, 0f, 0f);
-                moveDirection = transform.forward;
                 break;
             case 1: // backward
                 lookRotation = Quaternion.Euler(0f, 180f, 0f);
-                moveDirection = -transform.forward;
                 break;
             case 2: // left
                 lookRotation = Quaternion.Euler(0f, 270f, 0f);
-                moveDirection = -transform.right;
                 break;
             case 3: // right
                 lookRotation = Quaternion.Euler(0f, 90f, 0f);
-                moveDirection = transform.right;
                 break;
         }
         currentMoveTime -= Time.deltaTime;
         transform.localRotation = lookRotation;
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
-        animator.SetBool("isMoving", true);
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        animator.SetBool("IsMoving", true);
     }
 
     private void Idle()
     {
         currentIdleTime -= Time.deltaTime;
-        animator.SetBool("isMoving", false);
+        animator.SetBool("IsMoving", false);
     }
 
     private void ResetTimers()
