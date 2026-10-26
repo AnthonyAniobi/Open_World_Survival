@@ -22,7 +22,7 @@ public class CustomInputManager : MonoBehaviour
 
     void Start()
     {
-        inputMap = InputSystem.actions.FindActionMap("Player");
+        inputMap = InputSystem.actions.FindActionMap("Account");
         inputMap.Enable();
     }
 
@@ -39,6 +39,11 @@ public class CustomInputManager : MonoBehaviour
     public bool GetJumpInput()
     {
         return inputMap.FindAction("Jump").WasPressedThisFrame();
+    }
+
+    public bool GetInteractInput()
+    {
+        return inputMap.FindAction("Interact").WasPressedThisFrame();
     }
 
     public bool FlipCameraInput()
