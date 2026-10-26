@@ -13,6 +13,7 @@ public class AIMovement : MonoBehaviour
     private float currentMoveTime;
     private float currentIdleTime;
     private int direction = 0;
+    private Quaternion lookRotation = Quaternion.identity;
 
     void Start()
     {
@@ -41,8 +42,6 @@ public class AIMovement : MonoBehaviour
 
     private void Move()
     {
-        Vector3 moveDirection = Vector3.zero;
-        Quaternion lookRotation = Quaternion.identity;
         switch (direction)
         {
             case 0: // forward
@@ -67,6 +66,7 @@ public class AIMovement : MonoBehaviour
     private void Idle()
     {
         currentIdleTime -= Time.deltaTime;
+        transform.localRotation = lookRotation;
         animator.SetBool("IsMoving", false);
     }
 
