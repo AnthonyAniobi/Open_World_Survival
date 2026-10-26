@@ -27,7 +27,7 @@ public class SelectionManager : MonoBehaviour
 
     private void CheckSelectedObject()
     {
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo))
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hitInfo, 8f ))
         {
             InteractableObject interactableObject;
             if(hitInfo.collider.TryGetComponent<InteractableObject>(out interactableObject))
@@ -38,6 +38,9 @@ public class SelectionManager : MonoBehaviour
             {
                 selectionText.text = "";
             }
+        }else
+        {
+            selectionText.text = "";
         }
     }
 }
